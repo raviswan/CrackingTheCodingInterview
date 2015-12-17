@@ -156,3 +156,26 @@ void List::printList(){
 	cout<<endl;
 }
 
+
+bool List::loopDetect(){
+	ListElem* slowPtr, *fastPtr;
+	slowPtr = head;
+	fastPtr = head;
+	while(fastPtr != NULL || fastPtr->getNextElem() != NULL){
+		if(fastPtr == slowPtr){
+			printf("loop present");
+			return true;
+		}	
+		slowPtr = slowPtr->getNextElem();
+		fastPtr = fastPtr->getNextElem()->getNextElem();
+	}
+	printf("No loop present\n");
+	return 0;
+}
+		
+
+
+	}
+
+
+}

@@ -11,11 +11,11 @@ size_t HashTable::getBucketSize(){
 	return this->buckets;
 }
 
-/*rLook up the value pointed to by "data", which acts as both input and output here. If found, the return value is stored 
+/*Look up the value pointed to by "data", which acts as both input and output here. If found, the return value is stored 
 in "data" and function returns TRUE*/
 int HashTable::lookupData(void** data){
 	int bucket;
-	int hashCode = hFunc(data);
+	int hashCode = hFunc(*data);
 	ListElem* node;
 	/*Hash the key using division method */
     bucket = floor(fmod(hashCode*0.618,1.0) * this->buckets);

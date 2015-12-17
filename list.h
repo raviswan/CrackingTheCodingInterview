@@ -50,6 +50,9 @@ public:
 	void printList(void);
 	/*destroy the list by calling removeAfter() for each element */
 	void destroyList();
+
+	bool loopDetect();
+
 	
 private:
 	int length;
