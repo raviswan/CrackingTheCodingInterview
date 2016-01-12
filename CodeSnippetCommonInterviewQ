@@ -1,0 +1,161 @@
+
+/*Depth First Search*/
+class Graph{
+	Node[] nodes;
+}
+class Node{
+	string name;
+	Node[] adjacent;
+}
+void dfs(node* root){
+	if (root==NULL)
+		return;
+	visit(root);
+	root.visited = true
+	(for each n in adj. root.adjacent){
+		if(n.visted = false)
+			dfs(n)
+	}
+
+}
+
+/*Breadth First Search*/
+void bfs(node* root){
+	if(root==NULL)
+		return;
+	visit(root);
+	root.visited= true
+	for each n in root.adjacent{
+		enqueue(n);
+	}
+	while(queue not empty){
+		top = dequeue;
+		visit(top);
+		top.visited = true
+		for each n in top.adjacent
+			if(n.visited = false)
+				enqueue(n);
+
+	}
+
+}
+
+
+/*removing duplicates from a list*/
+checkDup(Node* root){
+	Node* current = root;
+	Node* runner;
+	while(current!= null){
+		runner = current;
+		while(runner.next != null){
+			if(runner.next.data==current.data){
+				runner.next = runner.next.next
+			}
+			else{
+				runner = runner.next
+			}
+			
+
+		}
+		current = current.next
+	}
+}
+
+
+/*checking for loop in a list*/
+checkLoopInList(Node* root){
+	Node* fast = head;
+	Node* slow = fast;
+
+
+	while(fast != NULL && fast.next != NULL){
+		slow = slow.next;
+		fast = fast.next.next;
+		if(slow==fast)
+			break;
+	}
+	if(fast == NULL|| fast.next == NULL)
+		return false;
+	slow = head;
+	while(slow!=fast){
+		slow= slow.next
+		fast= fast.next
+	}
+	return fast;
+}
+
+
+--------------------------------------------
+
+/*return kth to last element of list*/
+Node* returnKthElement(Node* root,int k,int &val){
+	if root==NULL{
+		val = 0;
+		return NULL;
+	}
+	
+	Node* node  = returnKthElement(root->next,k,val);
+	val = val+1;
+	if(val == k)
+		return root;
+	return node;
+	
+}
+Node* returnKthElement(Node* root,int k){
+	int val= 0
+	return returnKthElement(root,k,val);
+}
+
+--------------------------------------------
+
+int fibonacci(int n){
+	if (n==0)
+		return 0;
+	if(n==1)
+		return 1;
+	return fibnoacci(n-1)+ fibonacci(n-2)
+
+}
+
+------------------------------------------------
+
+int fibonacci(int n){
+	return fibonacci(n,new int[n+1]);
+}
+int fibonacci(int n,int* memo){
+	if(n==0 || n==1)
+		return n;
+	if(memo[n] == 0){
+		memo[n] = fibonacci(n-1,memo) + fibonacci(n-2,memo);
+	}
+	return memo[n];
+}
+
+------------------------------------------------
+char *p =  new char[5];
+int* pi = new int[4];
+delete []pi;
+
+std::unique_ptr<Foo> p1(new Foo(42));
+std::shared_ptr<int> sp(new int);
+v.push_back(p1);
+Foo* p = new Foo(42);
+template<typename T>
+std::map<string,int> mMap;
+mMap["Ram"] = 1;
+mMap.erase()
+mMap.find()
+Mmpa.size()
+mMap.empty()
+mMap.begin()->first()  //key
+mMap.begin()->second() //value
+
+std::map<int,string>::iterator i;
+mMap.
+class Stack{
+	std::vector<Foo> v;
+	for(std::vector<Foo>::iterator i=v.begin();i !=v.end(); i++){
+		cout<<*i<<endl;
+	}
+}
+std::unique_ptr<int> p(new int)
